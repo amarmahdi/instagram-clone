@@ -1,9 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import post from "./../post.jpg";
+import post1 from "./../post1.jpg";
 
 export const Feed = (prop) => {
-  const img = document.getElementsByClassName("resize");
-  console.log(img.natrualWidth);
-
+  // console.log(prop);
+  let imgs = [];
+  const imageSize = () => {
+    for (let key in prop) {
+      if (key !== "img") {
+      } else {
+        // console.log(prop[key]);
+        let img = new Image();
+        const fullUrl = `http://${window.location.hostname}:3000${prop[key]}`;
+        img.src = fullUrl;
+        imgs.push(img);
+        return true;
+      }
+    }
+  };
+  imageSize();
+  console.log(imgs);
+  let a = imgs.map((e) => {
+    return e.currentSrc.slice(21);
+  });
+  const heightIdentifier = (url) => {
+    if (a.indexOf(url) > -1) {
+      return imgs[a.indexOf(url)].height;
+    } else {
+      return null;
+    }
+  };
+  // eslint-disable-next-line no-unused-vars
+  let [feed, setFeed] = useState([
+    {
+      img: post,
+      size: heightIdentifier(post),
+    },
+    {
+      img: post1,
+      size: heightIdentifier(post1),
+    },
+  ]);
   return (
     <div
       className="pl-80 pr-80 w-full flex"
