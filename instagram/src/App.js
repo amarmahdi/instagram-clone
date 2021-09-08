@@ -24,11 +24,19 @@ import "./App.css";
 const App = () => {
   return (
     <div className="App">
-      <div className="h-screen">
+      <div className="h-screen w-full">
         <Header />
-        <RightNav />
-        <Story />
-        <NewsFeed />
+        <div
+          className="container justify-center relative top-24"
+          style={{
+            maxWidth: "59%",
+            margin: "auto",
+          }}
+        >
+          <RightNav />
+          <Story />
+          <NewsFeed />
+        </div>
       </div>
     </div>
   );

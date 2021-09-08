@@ -2,13 +2,10 @@ import React from "react";
 
 export const RightNav = () => {
   return (
-    <div
-      className="pl-80 pr-80 w-full flex fixed justify-end"
-      style={{ paddingTop: "84px" }}
-    >
+    <div className="flex justify-end">
       <div
-        className="border-gray-300 border-solid h-screen pb-10"
-        style={{ borderWidth: "1px", width: "35.5%" }}
+        className="border-gray-300 fixed border-solid h-screen pb-10 top-24"
+        style={{ borderWidth: "1px", width: "21%" }}
       ></div>
     </div>
   );
