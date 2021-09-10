@@ -11,8 +11,9 @@ const App = () => {
       <div className="h-screen w-full">
         <Header />
         <div
-          className="container justify-center relative top-24"
+          className="container justify-center relative"
           style={{
+            top: "88px",
             maxWidth: "59%",
             margin: "auto",
           }}
